@@ -12,13 +12,13 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-name: test-intermittency
+name: it-client
 on:
   schedule:
    - cron: '*/15 * * * *'
 jobs:
-  runtest:
-    name: single
+  it-client:
+    name: it-client
     runs-on: ubuntu-18.04
     steps:
         - uses: actions/checkout@master
@@ -26,7 +26,7 @@ jobs:
             ref: leader-election-problem
         - uses: ./.github/buildenv
           with:
-             args: ./hadoop-ozone/dev-support/checks/integration.sh -Dtest=TestOzoneRpcClient
+             args: ./hadoop-ozone/dev-support/checks/integration.sh -P=it-client
         - uses: actions/upload-artifact@master
           if: always()
           with:

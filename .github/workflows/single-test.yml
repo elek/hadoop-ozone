@@ -15,7 +15,7 @@
 name: test-intermittency
 on:
   schedule:
-   - cron: '*/30 * * * *'
+   - cron: '*/15 * * * *'
 jobs:
   runtest:
     name: single

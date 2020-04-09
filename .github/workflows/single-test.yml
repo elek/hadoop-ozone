@@ -15,7 +15,7 @@
 name: it-client
 on:
   schedule:
-   - cron: '*/15 * * * *'
+   - cron: '*/30 * * * *'
 jobs:
   it-client:
     name: it-client
@@ -26,7 +26,7 @@ jobs:
             ref: leader-election-problem
         - uses: ./.github/buildenv
           with:
-             args: ./hadoop-ozone/dev-support/checks/integration.sh -P=it-client
+             args: ./hadoop-ozone/dev-support/checks/integration.sh -P=client
         - uses: actions/upload-artifact@master
           if: always()
           with:

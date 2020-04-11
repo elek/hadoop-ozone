@@ -15,7 +15,7 @@
 name: it-client
 on:
   schedule:
-   - cron: '*/30 * * * *'
+   - cron: '30 0 * * *'
 jobs:
   it-client:
     name: it-client

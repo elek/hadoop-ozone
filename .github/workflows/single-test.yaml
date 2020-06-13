@@ -1,4 +1,4 @@
-name: test-key-input-stream
+name: single-test
 on:
   schedule:
    - cron: '*/30 * * * *'
@@ -12,7 +12,7 @@ jobs:
             ref: master-test
         - uses: ./.github/buildenv
           with:
-             args: ./hadoop-ozone/dev-support/checks/integration.sh -Dtest=TestKeyInputStream
+             args: ./hadoop-ozone/dev-support/checks/integration.sh -Dtest=TestDataValidateWithUnsafeByteOperations
         - uses: actions/upload-artifact@master
           if: always()
           with:

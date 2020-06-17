@@ -14,8 +14,9 @@
 # limitations under the License.
 name: build-branch
 on:
-  push: {}
-  schedule: 5 0,13 * * *
+  push:
+  schedule:
+    - cron: 10 0,13 * * *
 jobs:
   build:
     name: compile

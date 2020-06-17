@@ -1,7 +1,7 @@
 name: testMultiBlockWrites3
 on:
   schedule:
-   - cron: '*/30 * * * *'
+   - cron: '0 2,14 * * *'
 jobs:
   it-client:
     name: it-client
